@@ -1,0 +1,33 @@
+{
+  "name": "thoughtfull",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masamune2002/thoughtfull.git"
+  },
+  "author": "masamune2002",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masamune2002/thoughtfull/issues"
+  },
+  "homepage": "https://github.com/masamune2002/thoughtfull",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.12.4",
+    "config": "^1.13.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.12.4",
+    "express-session": "^1.11.2",
+    "js-yaml": "^3.3.1",
+    "lodash": "^3.9.3",
+    "node-uuid": "^1.4.3",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "pg": "^4.3.0"
+  }
+}

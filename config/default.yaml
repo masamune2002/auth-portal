@@ -1,0 +1,7 @@
+db:
+  host: localhost
+  db: thoughtfull
+  username: thoughtfull
+  password: mind
+auth:
+  secret: changeme
