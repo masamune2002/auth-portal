@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var users = require('../model/users');
+var config = require('config');
 
 module.exports = function (passport) {
   router.post('/login', passport.authenticate('login', { failureFlash: true }),
@@ -11,6 +13,17 @@ module.exports = function (passport) {
     function (req, res) {
       res.json(req.body);
     });
+
+  router.post('/deleteUser', function(req, res) {
+    var user = req.body.username;
+    users.deleteUser(user, config.auth.softDelete, function(error) {
+      if (error) {
+        console.log(error);
+        res.status(500).send('Unable to delete user ' + user + ".");
+      }
+    })
+    res.json(req.body);
+  });
 
   return router;
 };

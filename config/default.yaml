@@ -1,7 +1,8 @@
 db:
   host: localhost
-  db: thoughtfull
-  username: thoughtfull
-  password: mind
+  db: auth_portal
+  username: auth
+  password: auth
 auth:
   secret: changeme
+  softDelete: false

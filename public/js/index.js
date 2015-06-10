@@ -40,4 +40,19 @@ $(document).ready(function () {
     });
   });
 
+  $('#delete').click(function () {
+    var user = {
+      username: $('#delete-field').val(),
+    };
+
+    $.post("deleteUser", user, function (data) {
+      if (data) {
+        displayMessage("User " + data.username + " deleted successfully!", "success");
+      }
+    }).error(function (error) {
+      console.log(error);
+      displayMessage("User was unable to be deleted!", "fail");
+    });
+  });
+
 });

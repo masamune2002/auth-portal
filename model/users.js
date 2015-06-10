@@ -30,5 +30,22 @@ module.exports = {
       }
       callback(error, result.rows[0] || null);
     });
+  },
+
+  deleteUser: function (id, softDelete, callback) {
+    var query = "";
+    if (softDelete) {
+      query = "UPDATE app.user SET date_deleted=now() WHERE user_name=$1 AND " +
+              " date_deleted IS NULL";
+    } else {
+      query = "DELETE FROM app.user WHERE user_name=$1";
+    }
+    db.query(query, [id], function (error, result) {
+      if (error || !result || !result.rows) {
+        console.log("Unable to delete user with id " + id + ":\n" + error);
+        return;
+      }
+      callback(error, result.rows[0] || null);
+    });
   }
 };
